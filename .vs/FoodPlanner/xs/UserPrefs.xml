@@ -1,0 +1,40 @@
+﻿<Properties StartupConfiguration="{C48CC13B-DC64-4D90-B5E9-27CD75DC4E2F}|Default">
+  <MonoDevelop.Ide.ItemProperties.FoodPlanner.Web PreferredExecutionTarget="/Applications/Microsoft Edge.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="FoodPlanner.Web/ClientApp/src/components/NavMenu.js">
+    <Files>
+      <File FileName="FoodPlanner.Web/Controllers/ProductsController.cs" Line="19" Column="46" />
+      <File FileName="FoodPlanner.Web/ClientApp/src/components/FetchData.js" Line="55" Column="37" />
+      <File FileName="FoodPlanner.Web/ClientApp/src/App.js" Line="15" Column="13" />
+      <File FileName="FoodPlanner.Web/ClientApp/src/components/Products.js" Line="20" Column="33" />
+      <File FileName="FoodPlanner.Web/ClientApp/src/components/Home.js" Line="1" Column="1" />
+      <File FileName="FoodPlanner.Web/ClientApp/src/components/NavMenu.js" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="FoodPlanner" expanded="True">
+            <Node name="FoodPlanner.Web" expanded="True">
+              <Node name="ClientApp" expanded="True">
+                <Node name="public" expanded="True" />
+                <Node name="src" expanded="True">
+                  <Node name="components" expanded="True">
+                    <Node name="NavMenu.js" selected="True" />
+                  </Node>
+                  <Node name="App.js" expanded="True" />
+                </Node>
+              </Node>
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
