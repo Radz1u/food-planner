@@ -1,7 +1,15 @@
+using System;
+using FoodPlanner.Infrastructure.Builders;
+using FoodPlanner.Infrastructure.Configurations;
+using FoodPlanner.Infrastructure.DbContexts;
+using FoodPlanner.Infrastructure.RequestHandlers;
+using FoodPlanner.Infrastructure.Requests;
+using FoodPlanner.Infrastructure.Responses;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -28,6 +36,21 @@ namespace FoodPlanner.Web
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            services.AddDbContext<EFDbContext>(options =>
+            options.UseSqlServer(
+                        Configuration.GetConnectionString("DefaultConnection"),
+                        x => x.MigrationsAssembly("FoodPlanner.DatabaseMigrations")));
+
+            ConfigureHandlers(services);
+        }
+
+        private void ConfigureHandlers(IServiceCollection services)
+        {
+            services.AddScoped<IRequestHandler<GetProductsRequest, GetProductsResponse>, GetProductsRequestHandler>();
+            services.AddScoped<IRequestHandler<CreateProductRequest, StatusResponse>, CreateProductRequestHandler>();
+            services.AddScoped<IRequestHandler<UpdateProductRequest, StatusResponse>, UpdateProductRequestHandler>();
+            services.AddScoped<IRequestHandler<DeleteProductRequest, StatusResponse>, DeleteProductRequestHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

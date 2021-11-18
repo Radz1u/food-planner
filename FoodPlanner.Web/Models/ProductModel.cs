@@ -1,9 +1,14 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+
 namespace FoodPlanner.Web.Models
 {
     public class ProductModel
     {
-        public Guid Id { get; set; }
+        [Required]
+        public int Id { get; set; }
+        
+        [Required]
         public string Name { get; set; }
     }
 }
