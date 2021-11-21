@@ -8,12 +8,21 @@ export class Products extends Component {
     this.state = { products: [], loading: true };
   }
 
-  componentDidMount() {
-    this.populateData();
+  async componentDidMount() {
+    const response = await fetch("products");
+    //  .then((response) => response.json())
+    //.then((data) => this.setState({ products: data, loading: false }));
+
+    const data = await response.json();
+    this.setState({ products: data, loading: false });
   }
 
-  static renderTable(products) {
-    return (
+  render() {
+    let contents = this.state.loading ? (
+      <p>
+        <em>Loading...</em>
+      </p>
+    ) : (
       <table className="table table-striped" aria-labelledby="tabelLabel">
         <thead>
           <tr>
@@ -23,21 +32,16 @@ export class Products extends Component {
           </tr>
         </thead>
         <tbody>
-          {products.map((product) => (
-            <ProductItem id={product.id} productId={product.id} productName={product.name} />
+          {this.state.products.map((product) => (
+            <ProductItem
+              refreshCallback={this.componentDidUpdate}
+              id={product.id}
+              productId={product.id}
+              productName={product.name}
+            />
           ))}
         </tbody>
       </table>
-    );
-  }
-
-  render() {
-    let contents = this.state.loading ? (
-      <p>
-        <em>Loading...</em>
-      </p>
-    ) : (
-      Products.renderTable(this.state.products)
     );
 
     return (
@@ -45,13 +49,8 @@ export class Products extends Component {
         <h1 id="tabelLabel">Products</h1>
         <p>List of products added to database.</p>
         {contents}
+      <button className="btn btn-add">+</button>
       </div>
     );
-  }
-
-  async populateData() {
-    const response = await fetch("products");
-    const data = await response.json();
-    this.setState({ products: data, loading: false });
   }
 }

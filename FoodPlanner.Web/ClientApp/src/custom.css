@@ -12,3 +12,18 @@ code {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+
+.btn-add{
+  background-color: #228b22;
+  border-color: #228b22;
+  border-radius: 100%;
+  color: #fff;
+  float: right;
+  
+}
+
+.btn-add:hover{
+  color: #fff;
+  border-color:#00FF00;
+}
+
