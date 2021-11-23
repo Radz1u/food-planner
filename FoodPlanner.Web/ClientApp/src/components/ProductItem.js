@@ -12,11 +12,11 @@ export class ProductItem extends Component {
       isDeleting: false,
     };
 
-    // method to support delete function
+    // delete function
     this.onDelete = this.onDelete.bind(this);
     this.deleteProduct = this.deleteProduct.bind(this);
 
-    // method for support edit function
+    // edit function
     this.onEdit = this.onEdit.bind(this);
     this.onNameChange = this.onNameChange.bind(this);
     this.updateProduct = this.updateProduct.bind(this);

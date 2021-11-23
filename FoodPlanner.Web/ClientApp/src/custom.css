@@ -12,6 +12,25 @@ code {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+.btn-save{
+  background-color: #228b22;
+  color: #fff;
+}
+
+.btn-save:hover{
+  background-color: #808080;
+}
+
+.btn-cancel{
+  background-color: transparent;
+  border-color: #808080;
+  color: #808080;
+}
+.btn-cancel:hover{
+  background-color: #808080;
+  color: #FFF;
+  
+}
 
 .btn-add{
   background-color: #228b22;

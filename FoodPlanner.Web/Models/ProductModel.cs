@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace FoodPlanner.Web.Models
 {
-    public class ProductModel
+    public class    ProductModel
     {
         [Required]
         public int Id { get; set; }

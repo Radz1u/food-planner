@@ -27,12 +27,12 @@ namespace FoodPlanner.Infrastructure.RequestHandlers
             {
                 throw new ArgumentNullException(nameof(request.Name));
             }
-            
+             
             var entityId = default(int);
             var existingEntity = _dbContext
                 .Products
                 .AsQueryable()
-                .First(x => x.Name.Equals(request.Name, System.StringComparison.InvariantCultureIgnoreCase));
+                .FirstOrDefault(x => x.Name.ToLower()==request.Name.ToLower());
 
             if (existingEntity != null)
             {
