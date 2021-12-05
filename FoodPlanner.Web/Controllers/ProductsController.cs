@@ -38,16 +38,37 @@ namespace FoodPlanner.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<ProductModel>> Get()
+        public async Task<IActionResult> Get([FromQuery] PageRequestModel model)
         {
-            var request = new GetProductsRequest();
-            var result = await _getProductsRequestHandler.HandleAsync(request);
-
-            return result.Products.Select(x => new ProductModel
+            if (model == null)
             {
-                Id = x.Id,
-                Name = x.Name
-            });
+                return new BadRequestResult();
+            }
+
+            if (model != null && model.Take == default(int) && string.IsNullOrWhiteSpace(model.ContinuationToken))
+            {
+                return new BadRequestObjectResult(
+                    $"{model.Take} and {model.ContinuationToken} cannot be empty or default at the same time");
+            }
+
+            var request = new GetProductsRequest
+            {
+                Take = model.Take,
+                ContinuationToken = model.ContinuationToken
+            };
+
+            var result = await _getProductsRequestHandler.HandleAsync(request);
+            var responseBody = new PageResponseModel<ProductModel>
+            {
+                NextPageToken = result.NextPageToken,
+                PreviousPageToken = result.PreviousPageToken,
+                Items = result.Products.Select(x => new ProductModel
+                {
+                    Id = x.Id,
+                    Name = x.Name
+                })
+            };
+            return new OkObjectResult(responseBody);
         }
 
         [HttpPost]

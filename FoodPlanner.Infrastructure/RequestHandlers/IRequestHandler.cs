@@ -7,7 +7,6 @@ namespace FoodPlanner.Infrastructure.RequestHandlers{
      where TRequest:IRequest
      where TResponse:IResponse
     {
-        
         Task<TResponse> HandleAsync(TRequest request);
     }
 }

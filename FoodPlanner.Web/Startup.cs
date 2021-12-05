@@ -5,6 +5,7 @@ using FoodPlanner.Infrastructure.DbContexts;
 using FoodPlanner.Infrastructure.RequestHandlers;
 using FoodPlanner.Infrastructure.Requests;
 using FoodPlanner.Infrastructure.Responses;
+using FoodPlanner.Infrastructure.Utils;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -42,6 +43,7 @@ namespace FoodPlanner.Web
                         Configuration.GetConnectionString("DefaultConnection"),
                         x => x.MigrationsAssembly("FoodPlanner.DatabaseMigrations")));
 
+            ConfigureDependecies(services);
             ConfigureHandlers(services);
         }
 
@@ -51,6 +53,11 @@ namespace FoodPlanner.Web
             services.AddScoped<IRequestHandler<CreateProductRequest, StatusResponse>, CreateProductRequestHandler>();
             services.AddScoped<IRequestHandler<UpdateProductRequest, StatusResponse>, UpdateProductRequestHandler>();
             services.AddScoped<IRequestHandler<DeleteProductRequest, StatusResponse>, DeleteProductRequestHandler>();
+        }
+
+        private void ConfigureDependecies(IServiceCollection services)
+        {
+            services.AddSingleton<IContinuationTokenEncoding,ContinuationTokenEncoding>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

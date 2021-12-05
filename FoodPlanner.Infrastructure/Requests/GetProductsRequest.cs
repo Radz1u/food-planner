@@ -2,6 +2,7 @@ namespace FoodPlanner.Infrastructure.Requests
 {
     public class GetProductsRequest : IRequest
     {
-        public int Count { get; set; }
+        public string ContinuationToken { get; set; }
+        public int Take { get; set; }
     }
 }

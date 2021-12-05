@@ -4,4 +4,4 @@ namespace FoodPlanner.Infrastructure.Requests
     {
         public int Id { get; set; }
     }   
-}
+}   
