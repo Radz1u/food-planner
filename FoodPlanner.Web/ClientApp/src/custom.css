@@ -4,7 +4,7 @@ a {
 }
 
 code {
-  color: #E01A76;
+  color: #e01a76;
 }
 
 .btn-primary {
@@ -12,48 +12,49 @@ code {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
-.btn-save{
+.btn-save {
   background-color: #228b22;
   color: #fff;
 }
 
-.btn-save:hover{
+.btn-save:hover {
   background-color: #808080;
 }
 
-.btn-cancel{
+.btn-cancel {
   background-color: transparent;
   border-color: #808080;
   color: #808080;
 }
-.btn-cancel:hover{
+.btn-cancel:hover {
   background-color: #808080;
-  color: #FFF;
-  
+  color: #fff;
 }
 
-.btn-add{
+.btn-add {
   background-color: #228b22;
   border-color: #228b22;
   border-radius: 100%;
   color: #fff;
   float: right;
-  
 }
 
-.btn-add:hover{
+.btn-add:hover {
   color: #fff;
-  border-color:#00FF00;
+  border-color: #00ff00;
 }
 
-.btn-prev{
-    float:left;
+.btn-prev {
+  font-family: 'Nanum Gothic','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  float: left;
+  font-size: 30pt;
 }
 
-.btn-next{
+.btn-next {
+  font-family: 'Nanum Gothic','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   float: right;
+  font-size: 30pt;
 }
 
-.container-navigation{
-  width: 100%;
+.container-navigation {
 }

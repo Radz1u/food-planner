@@ -28,7 +28,7 @@ export class Products extends Component {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     };
-    const response = await fetch("products?take=25");
+    const response = await fetch("products?take=5");
     const data = await response.json();
 
     this.setState({
@@ -104,9 +104,6 @@ export class Products extends Component {
       <table className="table table-striped" aria-labelledby="tabelLabel">
         <thead>
           <tr>
-            <th>Name</th>
-            <th></th>
-            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -152,7 +149,7 @@ export class Products extends Component {
         <div className="col" />
       ) : (
         <div className="col">
-          <button className="btn btn-next" onClick={this.loadNextPage}>Next&gt;&gt;</button>
+          <button className="btn btn-next" onClick={this.loadNextPage}>&gt;</button>
         </div>
       );
 
@@ -161,14 +158,13 @@ export class Products extends Component {
         <div className="col" />
       ) : (
         <div className="col">
-          <button className="btn btn-prev" onClick={this.loadPreviousPage}>&lt;&lt;Previous</button>
+          <button className="btn btn-prev" onClick={this.loadPreviousPage}>&lt;</button>
         </div>
       );
 
     return (
       <div>
         <h1 id="tabelLabel">Products</h1>
-        <p>List of products added to database.</p>
         <div className="row container">{contents}</div>
         {isAdding}
         <button className="btn btn-add" onClick={this.showAddProduct}>
