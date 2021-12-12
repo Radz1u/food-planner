@@ -9,7 +9,7 @@ export class Products extends Component {
     this.state = {
       products: [],
       loading: true,
-      isAdding: false,
+      showAddModal: false,
       newProductName: "",
     };
 
@@ -21,6 +21,11 @@ export class Products extends Component {
     this.loadPage = this.loadPage.bind(this);
     this.loadNextPage = this.loadNextPage.bind(this);
     this.loadPreviousPage = this.loadPreviousPage.bind(this);
+
+    this.renderNextPageButton=this.renderNextPageButton.bind(this);
+    this.renderPreviousPageButton=this.renderPreviousPageButton.bind(this);
+    this.renderAddProductModal=this.renderAddProductModal.bind(this);
+    this.renderProductTable=this.renderProductTable.bind(this);
   }
 
   async componentDidMount() {
@@ -28,6 +33,7 @@ export class Products extends Component {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     };
+
     const response = await fetch("products?take=5");
     const data = await response.json();
 
@@ -40,7 +46,7 @@ export class Products extends Component {
   }
 
   showAddProduct() {
-    this.setState({ isAdding: true });
+    this.setState({ showAddModal: true });
   }
 
   async onAddProduct() {
@@ -54,7 +60,7 @@ export class Products extends Component {
     let product = await response.json();
 
     this.setState({
-      isAdding: false,
+      showAddModal: false,
       newProductName: "",
       products: [...this.state.products, product],
     });
@@ -65,7 +71,7 @@ export class Products extends Component {
   }
 
   onCancel() {
-    this.setState({ isAdding: false, newProductName: "" });
+    this.setState({ showAddModal: false, newProductName: "" });
   }
 
   async loadPage(token){
@@ -95,31 +101,9 @@ export class Products extends Component {
     await this.loadPage(this.state.previous);
   }
 
-  render() {
-    let contents = this.state.loading ? (
-      <p>
-        <em>Loading...</em>
-      </p>
-    ) : (
-      <table className="table table-striped" aria-labelledby="tabelLabel">
-        <thead>
-          <tr>
-          </tr>
-        </thead>
-        <tbody>
-          {this.state.products.map((product) => (
-            <ProductItem
-              id={product.id}
-              productId={product.id}
-              productName={product.name}
-            />
-          ))}
-        </tbody>
-      </table>
-    );
-
-    let isAdding = this.state.isAdding ? (
-      <Modal isOpen={this.state.isAdding}>
+  renderAddProductModal(){
+    return this.state.showAddModal ? (
+      <Modal isOpen={this.state.showAddModal}>
         <ModalHeader>Add product</ModalHeader>
         <ModalBody>
           <input
@@ -143,37 +127,69 @@ export class Products extends Component {
     ) : (
       <div></div>
     );
+  }
 
-    let nextPageButton =
-      this.state.next == null || this.state.next.length == 0 ? (
-        <div className="col" />
-      ) : (
-        <div className="col">
-          <button className="btn btn-next" onClick={this.loadNextPage}>&gt;</button>
-        </div>
-      );
+  renderNextPageButton(){
+    return this.state.next == null || this.state.next.length == 0 ? (
+      <div className="col" />
+    ) : (
+      <div className="col">
+        <button className="btn btn-next" onClick={this.loadNextPage}>&gt;</button>
+      </div>
+    );
+  }
 
-    let previousPageButton =
-      this.state.previous == null || this.state.previous.length == 0 ? (
-        <div className="col" />
-      ) : (
-        <div className="col">
-          <button className="btn btn-prev" onClick={this.loadPreviousPage}>&lt;</button>
-        </div>
-      );
+  renderPreviousPageButton(){
+    this.state.previous == null || this.state.previous.length == 0 ? (
+      <div className="col" />
+    ) : (
+      <div className="col">
+        <button className="btn btn-prev" onClick={this.loadPreviousPage}>&lt;</button>
+      </div>
+    );
+  }
 
+  renderProductTable(){
+    this.state.loading ? (
+      <p>
+        <em>Loading...</em>
+      </p>
+    ) : (
+      <table className="table table-striped" aria-labelledby="tabelLabel">
+        <thead>
+          <tr>
+          </tr>
+        </thead>
+        <tbody>
+          {this.state.products.map((product) => (
+            <ProductItem
+              id={product.id}
+              productId={product.id}
+              productName={product.name}
+            />
+          ))}
+        </tbody>
+      </table>
+    );
+  }
+
+  render() {
     return (
       <div>
         <h1 id="tabelLabel">Products</h1>
-        <div className="row container">{contents}</div>
-        {isAdding}
+        <div className="row container">
+          {this.renderProductTable()}
+        </div>
+        
         <button className="btn btn-add" onClick={this.showAddProduct}>
           +
         </button>
         <div className="row container-navigation">
-          {previousPageButton}
-          {nextPageButton}
+          {this.renderPreviousPageButton()}
+          {this.renderNextPageButton()}
         </div>
+
+        {this.renderAddProductModal()}
       </div>
     );
   }
