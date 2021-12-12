@@ -1,30 +1,29 @@
 ﻿<Properties StartupConfiguration="{C48CC13B-DC64-4D90-B5E9-27CD75DC4E2F}|Default">
-  <MonoDevelop.Ide.ItemProperties.FoodPlanner.Web PreferredExecutionTarget="/Applications/Microsoft Edge.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="FoodPlanner.Web/ClientApp/src/components/NavMenu.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FoodPlanner.Web/appsettings.json">
     <Files>
-      <File FileName="FoodPlanner.Web/Controllers/ProductsController.cs" Line="19" Column="46" />
-      <File FileName="FoodPlanner.Web/ClientApp/src/components/FetchData.js" Line="55" Column="37" />
-      <File FileName="FoodPlanner.Web/ClientApp/src/App.js" Line="15" Column="13" />
-      <File FileName="FoodPlanner.Web/ClientApp/src/components/Products.js" Line="20" Column="33" />
-      <File FileName="FoodPlanner.Web/ClientApp/src/components/Home.js" Line="1" Column="1" />
-      <File FileName="FoodPlanner.Web/ClientApp/src/components/NavMenu.js" Line="1" Column="1" />
+      <File FileName="FoodPlanner.Web/Startup.cs" Line="38" Column="16" />
+      <File FileName="FoodPlanner.Core/Entities/EntityBase.cs" />
+      <File FileName="FoodPlanner.Core/Entities/ProductEntity.cs" />
+      <File FileName="FoodPlanner.Core/Entities/ReceiptEntity.cs" />
+      <File FileName="FoodPlanner.Core/Entities/ReceiptItemEntity.cs" />
+      <File FileName="FoodPlanner.Infrastructure/DbContexts/EFDbContext.cs" />
+      <File FileName="FoodPlanner.Web/appsettings.json" Line="11" Column="103" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="FoodPlanner" expanded="True">
-            <Node name="FoodPlanner.Web" expanded="True">
-              <Node name="ClientApp" expanded="True">
-                <Node name="public" expanded="True" />
-                <Node name="src" expanded="True">
-                  <Node name="components" expanded="True">
-                    <Node name="NavMenu.js" selected="True" />
-                  </Node>
-                  <Node name="App.js" expanded="True" />
-                </Node>
+            <Node name="src" expanded="True">
+              <Node name="FoodPlanner.Core" expanded="True">
+                <Node name="Entities" expanded="True" />
               </Node>
-              <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True" />
+              <Node name="FoodPlanner.DatabaseMigrations" expanded="True" />
+              <Node name="FoodPlanner.Infrastructure" expanded="True">
+                <Node name="DbContexts" expanded="True" />
+              </Node>
+              <Node name="FoodPlanner.Web" expanded="True">
+                <Node name="appsettings.json" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
@@ -32,6 +31,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.src.FoodPlanner.Web PreferredExecutionTarget="/Applications/Microsoft Edge.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
