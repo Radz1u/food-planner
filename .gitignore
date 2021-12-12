@@ -1,4 +1,5 @@
 **/obj
 **/xs
 **/bin
-.vs
+.vs/*
+.DS_Store
