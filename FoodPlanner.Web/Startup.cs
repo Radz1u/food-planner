@@ -1,6 +1,3 @@
-using System;
-using FoodPlanner.Infrastructure.Builders;
-using FoodPlanner.Infrastructure.Configurations;
 using FoodPlanner.Infrastructure.DbContexts;
 using FoodPlanner.Infrastructure.RequestHandlers;
 using FoodPlanner.Infrastructure.Requests;
@@ -8,7 +5,6 @@ using FoodPlanner.Infrastructure.Responses;
 using FoodPlanner.Infrastructure.Utils;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
