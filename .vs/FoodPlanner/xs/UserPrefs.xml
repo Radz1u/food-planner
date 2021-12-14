@@ -1,0 +1,40 @@
+﻿<Properties StartupConfiguration="{C48CC13B-DC64-4D90-B5E9-27CD75DC4E2F}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FoodPlanner.Web/appsettings.json">
+    <Files>
+      <File FileName="FoodPlanner.Web/Startup.cs" Line="38" Column="16" />
+      <File FileName="FoodPlanner.Core/Entities/EntityBase.cs" />
+      <File FileName="FoodPlanner.Core/Entities/ProductEntity.cs" />
+      <File FileName="FoodPlanner.Core/Entities/ReceiptEntity.cs" />
+      <File FileName="FoodPlanner.Core/Entities/ReceiptItemEntity.cs" />
+      <File FileName="FoodPlanner.Infrastructure/DbContexts/EFDbContext.cs" />
+      <File FileName="FoodPlanner.Web/appsettings.json" Line="11" Column="103" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="FoodPlanner" expanded="True">
+            <Node name="src" expanded="True">
+              <Node name="FoodPlanner.Core" expanded="True">
+                <Node name="Entities" expanded="True" />
+              </Node>
+              <Node name="FoodPlanner.DatabaseMigrations" expanded="True" />
+              <Node name="FoodPlanner.Infrastructure" expanded="True">
+                <Node name="DbContexts" expanded="True" />
+              </Node>
+              <Node name="FoodPlanner.Web" expanded="True">
+                <Node name="appsettings.json" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.src.FoodPlanner.Web PreferredExecutionTarget="/Applications/Microsoft Edge.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

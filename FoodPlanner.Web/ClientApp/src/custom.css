@@ -1,0 +1,60 @@
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #e01a76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+.btn-save {
+  background-color: #228b22;
+  color: #fff;
+}
+
+.btn-save:hover {
+  background-color: #808080;
+}
+
+.btn-cancel {
+  background-color: transparent;
+  border-color: #808080;
+  color: #808080;
+}
+.btn-cancel:hover {
+  background-color: #808080;
+  color: #fff;
+}
+
+.btn-add {
+  background-color: #228b22;
+  border-color: #228b22;
+  border-radius: 100%;
+  color: #fff;
+  float: right;
+}
+
+.btn-add:hover {
+  color: #fff;
+  border-color: #00ff00;
+}
+
+.btn-prev {
+  font-family: 'Nanum Gothic','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  float: left;
+  font-size: 30pt;
+}
+
+.btn-next {
+  font-family: 'Nanum Gothic','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  float: right;
+  font-size: 30pt;
+}
+
+.container-navigation {
+}
